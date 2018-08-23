@@ -21,6 +21,7 @@ function createAddWindow() {
 		title: "Add New Todo"
 	});
 	addWindow.loadURL(`file://${__dirname}/add.html`);
+
 	// Set window to null so js handles garbage collection
 	addWindow.on('closed', () => addWindow = null);
 }
@@ -29,6 +30,7 @@ ipcMain.on("todo:add", (event, todo) => {
 	mainWindow.webContents.send("todo:add", todo);
 	addWindow.close();
 });
+
 
 const menuTemplate = [
 	{
@@ -39,6 +41,13 @@ const menuTemplate = [
 				accelerator: "CmdOrCtrl+N",
 				click() {
 					createAddWindow();
+				}
+			},
+			{
+				label: "Clear Todos",
+				accelerator: "CmdOrCtrl+C",
+				click() {
+					mainWindow.webContents.send("todo:clear");
 				}
 			},
 			{
