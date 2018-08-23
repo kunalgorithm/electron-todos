@@ -23,14 +23,13 @@ function createAddWindow() {
 	addWindow.loadURL(`file://${__dirname}/add.html`);
 
 	// Set window to null so js handles garbage collection
-	addWindow.on('closed', () => addWindow = null);
+	addWindow.on("closed", () => (addWindow = null));
 }
 
 ipcMain.on("todo:add", (event, todo) => {
 	mainWindow.webContents.send("todo:add", todo);
 	addWindow.close();
 });
-
 
 const menuTemplate = [
 	{
@@ -70,7 +69,7 @@ if (process.env.NODE_ENV !== "production") {
 	menuTemplate.push({
 		label: "Developer",
 		submenu: [
-			{ role: 'reload' },
+			{ role: "reload" },
 			{
 				label: "Toggle Developer Tools",
 				accelerator:

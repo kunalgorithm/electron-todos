@@ -2,6 +2,8 @@
 # Electron Todos 
 A native desktop application built with HTML, CSS, and Javascript using [Electron].
 
+[../blob/master/screenshot.png]
+
 ## Usage 
 
 ```
