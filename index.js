@@ -17,7 +17,7 @@ function createAddWindow() {
 	addWindow = new BrowserWindow({
 		width: 300,
 		height: 200,
-		frame: false,
+		frame: true,
 		title: "Add New Todo"
 	});
 	addWindow.loadURL(`file://${__dirname}/add.html`);
@@ -61,6 +61,7 @@ if (process.env.NODE_ENV !== "production") {
 	menuTemplate.push({
 		label: "Developer",
 		submenu: [
+			{ role: 'reload' },
 			{
 				label: "Toggle Developer Tools",
 				accelerator:

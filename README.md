@@ -1,8 +1,8 @@
 
-# Electron Todo 
+# Electron Todos 
 A native desktop application built with HTML, CSS, and Javascript using [Electron].
 
-# Usage 
+## Usage 
 
 ```
 git clone https://github.com/kunalgorithm/electron-todos.git
